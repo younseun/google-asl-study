@@ -1302,7 +1302,7 @@ node {
     key: "f"
     value {
       func {
-        name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_370"
+        name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_559"
       }
     }
   }
@@ -1349,7 +1349,7 @@ node {
     key: "f"
     value {
       func {
-        name: "__inference_Dataset_map_decode_csv_477"
+        name: "__inference_Dataset_map_decode_csv_666"
       }
     }
   }
@@ -1736,7 +1736,7 @@ node {
     key: "dataset_factory"
     value {
       func {
-        name: "_make_dataset_uGaJWhrAAKc"
+        name: "_make_dataset_Aysja19ta44"
       }
     }
   }
@@ -1847,13 +1847,13 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/shape"
+  name: "dense_3/kernel/Initializer/random_uniform/shape"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -1891,13 +1891,13 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/min"
+  name: "dense_3/kernel/Initializer/random_uniform/min"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -1929,13 +1929,13 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/max"
+  name: "dense_3/kernel/Initializer/random_uniform/max"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -1967,9 +1967,9 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/RandomUniform"
+  name: "dense_3/kernel/Initializer/random_uniform/RandomUniform"
   op: "RandomUniform"
-  input: "dense/kernel/Initializer/random_uniform/shape"
+  input: "dense_3/kernel/Initializer/random_uniform/shape"
   attr {
     key: "T"
     value {
@@ -1980,7 +1980,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -2019,10 +2019,10 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/sub"
+  name: "dense_3/kernel/Initializer/random_uniform/sub"
   op: "Sub"
-  input: "dense/kernel/Initializer/random_uniform/max"
-  input: "dense/kernel/Initializer/random_uniform/min"
+  input: "dense_3/kernel/Initializer/random_uniform/max"
+  input: "dense_3/kernel/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2033,7 +2033,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -2048,10 +2048,10 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform/mul"
+  name: "dense_3/kernel/Initializer/random_uniform/mul"
   op: "Mul"
-  input: "dense/kernel/Initializer/random_uniform/RandomUniform"
-  input: "dense/kernel/Initializer/random_uniform/sub"
+  input: "dense_3/kernel/Initializer/random_uniform/RandomUniform"
+  input: "dense_3/kernel/Initializer/random_uniform/sub"
   attr {
     key: "T"
     value {
@@ -2062,7 +2062,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -2083,10 +2083,10 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Initializer/random_uniform"
+  name: "dense_3/kernel/Initializer/random_uniform"
   op: "Add"
-  input: "dense/kernel/Initializer/random_uniform/mul"
-  input: "dense/kernel/Initializer/random_uniform/min"
+  input: "dense_3/kernel/Initializer/random_uniform/mul"
+  input: "dense_3/kernel/Initializer/random_uniform/min"
   attr {
     key: "T"
     value {
@@ -2097,7 +2097,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -2118,13 +2118,13 @@ node {
   }
 }
 node {
-  name: "dense/kernel"
+  name: "dense_3/kernel"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -2165,14 +2165,14 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "dense/kernel"
+      s: "dense_3/kernel"
     }
   }
 }
 node {
-  name: "dense/kernel/IsInitialized/VarIsInitializedOp"
+  name: "dense_3/kernel/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   attr {
     key: "_output_shapes"
     value {
@@ -2184,10 +2184,10 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Assign"
+  name: "dense_3/kernel/Assign"
   op: "AssignVariableOp"
-  input: "dense/kernel"
-  input: "dense/kernel/Initializer/random_uniform"
+  input: "dense_3/kernel"
+  input: "dense_3/kernel/Initializer/random_uniform"
   attr {
     key: "dtype"
     value {
@@ -2196,9 +2196,9 @@ node {
   }
 }
 node {
-  name: "dense/kernel/Read/ReadVariableOp"
+  name: "dense_3/kernel/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   attr {
     key: "_output_shapes"
     value {
@@ -2222,13 +2222,13 @@ node {
   }
 }
 node {
-  name: "dense/bias/Initializer/zeros"
+  name: "dense_3/bias/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -2266,13 +2266,13 @@ node {
   }
 }
 node {
-  name: "dense/bias"
+  name: "dense_3/bias"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -2310,14 +2310,14 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "dense/bias"
+      s: "dense_3/bias"
     }
   }
 }
 node {
-  name: "dense/bias/IsInitialized/VarIsInitializedOp"
+  name: "dense_3/bias/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   attr {
     key: "_output_shapes"
     value {
@@ -2329,10 +2329,10 @@ node {
   }
 }
 node {
-  name: "dense/bias/Assign"
+  name: "dense_3/bias/Assign"
   op: "AssignVariableOp"
-  input: "dense/bias"
-  input: "dense/bias/Initializer/zeros"
+  input: "dense_3/bias"
+  input: "dense_3/bias/Initializer/zeros"
   attr {
     key: "dtype"
     value {
@@ -2341,9 +2341,9 @@ node {
   }
 }
 node {
-  name: "dense/bias/Read/ReadVariableOp"
+  name: "dense_3/bias/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   attr {
     key: "_output_shapes"
     value {
@@ -2364,9 +2364,9 @@ node {
   }
 }
 node {
-  name: "dense/MatMul/ReadVariableOp"
+  name: "dense_3/MatMul/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   attr {
     key: "_output_shapes"
     value {
@@ -2390,10 +2390,10 @@ node {
   }
 }
 node {
-  name: "dense/MatMul"
+  name: "dense_3/MatMul"
   op: "MatMul"
   input: "IteratorGetNext"
-  input: "dense/MatMul/ReadVariableOp"
+  input: "dense_3/MatMul/ReadVariableOp"
   attr {
     key: "T"
     value {
@@ -2429,9 +2429,9 @@ node {
   }
 }
 node {
-  name: "dense/BiasAdd/ReadVariableOp"
+  name: "dense_3/BiasAdd/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   attr {
     key: "_output_shapes"
     value {
@@ -2452,10 +2452,10 @@ node {
   }
 }
 node {
-  name: "dense/BiasAdd"
+  name: "dense_3/BiasAdd"
   op: "BiasAdd"
-  input: "dense/MatMul"
-  input: "dense/BiasAdd/ReadVariableOp"
+  input: "dense_3/MatMul"
+  input: "dense_3/BiasAdd/ReadVariableOp"
   attr {
     key: "T"
     value {
@@ -2747,7 +2747,7 @@ node {
 node {
   name: "metrics/mean_squared_error/remove_squeezable_dimensions/Squeeze"
   op: "Squeeze"
-  input: "dense/BiasAdd"
+  input: "dense_3/BiasAdd"
   attr {
     key: "T"
     value {
@@ -3143,9 +3143,9 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/SquaredDifference"
+  name: "loss/dense_3_loss/SquaredDifference"
   op: "SquaredDifference"
-  input: "dense/BiasAdd"
+  input: "dense_3/BiasAdd"
   input: "IteratorGetNext:1"
   attr {
     key: "T"
@@ -3170,7 +3170,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Mean/reduction_indices"
+  name: "loss/dense_3_loss/Mean/reduction_indices"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3200,10 +3200,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Mean"
+  name: "loss/dense_3_loss/Mean"
   op: "Mean"
-  input: "loss/dense_loss/SquaredDifference"
-  input: "loss/dense_loss/Mean/reduction_indices"
+  input: "loss/dense_3_loss/SquaredDifference"
+  input: "loss/dense_3_loss/Mean/reduction_indices"
   attr {
     key: "T"
     value {
@@ -3236,7 +3236,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/Cast/x"
+  name: "loss/dense_3_loss/weighted_loss/Cast/x"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3266,7 +3266,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/weights/shape"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/weights/shape"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3299,7 +3299,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/weights/rank"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/weights/rank"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3329,9 +3329,9 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/values/shape"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/values/shape"
   op: "Shape"
-  input: "loss/dense_loss/Mean"
+  input: "loss/dense_3_loss/Mean"
   attr {
     key: "T"
     value {
@@ -3358,7 +3358,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/values/rank"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/values/rank"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3388,14 +3388,14 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
   op: "NoOp"
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like/Shape"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like/Shape"
   op: "Shape"
-  input: "loss/dense_loss/Mean"
-  input: "^loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  input: "loss/dense_3_loss/Mean"
+  input: "^loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
   attr {
     key: "T"
     value {
@@ -3422,9 +3422,9 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like/Const"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like/Const"
   op: "Const"
-  input: "^loss/dense_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  input: "^loss/dense_3_loss/weighted_loss/broadcast_weights/assert_broadcastable/static_scalar_check_success"
   attr {
     key: "_output_shapes"
     value {
@@ -3453,10 +3453,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like"
   op: "Fill"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like/Shape"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like/Const"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like/Shape"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like/Const"
   attr {
     key: "T"
     value {
@@ -3483,10 +3483,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/broadcast_weights"
+  name: "loss/dense_3_loss/weighted_loss/broadcast_weights"
   op: "Mul"
-  input: "loss/dense_loss/weighted_loss/Cast/x"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights/ones_like"
+  input: "loss/dense_3_loss/weighted_loss/Cast/x"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights/ones_like"
   attr {
     key: "T"
     value {
@@ -3507,10 +3507,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/weighted_loss/Mul"
+  name: "loss/dense_3_loss/weighted_loss/Mul"
   op: "Mul"
-  input: "loss/dense_loss/Mean"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights"
+  input: "loss/dense_3_loss/Mean"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights"
   attr {
     key: "T"
     value {
@@ -3531,7 +3531,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Const"
+  name: "loss/dense_3_loss/Const"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3567,10 +3567,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Sum"
+  name: "loss/dense_3_loss/Sum"
   op: "Sum"
-  input: "loss/dense_loss/weighted_loss/Mul"
-  input: "loss/dense_loss/Const"
+  input: "loss/dense_3_loss/weighted_loss/Mul"
+  input: "loss/dense_3_loss/Const"
   attr {
     key: "T"
     value {
@@ -3600,9 +3600,9 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/num_elements"
+  name: "loss/dense_3_loss/num_elements"
   op: "Size"
-  input: "loss/dense_loss/weighted_loss/Mul"
+  input: "loss/dense_3_loss/weighted_loss/Mul"
   attr {
     key: "T"
     value {
@@ -3626,9 +3626,9 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/num_elements/Cast"
+  name: "loss/dense_3_loss/num_elements/Cast"
   op: "Cast"
-  input: "loss/dense_loss/num_elements"
+  input: "loss/dense_3_loss/num_elements"
   attr {
     key: "DstT"
     value {
@@ -3658,7 +3658,7 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Const_1"
+  name: "loss/dense_3_loss/Const_1"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3691,10 +3691,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/Sum_1"
+  name: "loss/dense_3_loss/Sum_1"
   op: "Sum"
-  input: "loss/dense_loss/Sum"
-  input: "loss/dense_loss/Const_1"
+  input: "loss/dense_3_loss/Sum"
+  input: "loss/dense_3_loss/Const_1"
   attr {
     key: "T"
     value {
@@ -3724,10 +3724,10 @@ node {
   }
 }
 node {
-  name: "loss/dense_loss/value"
+  name: "loss/dense_3_loss/value"
   op: "DivNoNan"
-  input: "loss/dense_loss/Sum_1"
-  input: "loss/dense_loss/num_elements/Cast"
+  input: "loss/dense_3_loss/Sum_1"
+  input: "loss/dense_3_loss/num_elements/Cast"
   attr {
     key: "T"
     value {
@@ -3778,7 +3778,7 @@ node {
   name: "loss/mul"
   op: "Mul"
   input: "loss/mul/x"
-  input: "loss/dense_loss/value"
+  input: "loss/dense_3_loss/value"
   attr {
     key: "T"
     value {
@@ -3889,7 +3889,7 @@ node {
   name: "training/Adam/gradients/gradients/loss/mul_grad/Mul"
   op: "Mul"
   input: "training/Adam/gradients/gradients/Fill"
-  input: "loss/dense_loss/value"
+  input: "loss/dense_3_loss/value"
   attr {
     key: "T"
     value {
@@ -3928,7 +3928,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3961,7 +3961,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape_1"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -3994,10 +3994,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/BroadcastGradientArgs"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/BroadcastGradientArgs"
   op: "BroadcastGradientArgs"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -4023,10 +4023,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan"
   op: "DivNoNan"
   input: "training/Adam/gradients/gradients/loss/mul_grad/Mul_1"
-  input: "loss/dense_loss/num_elements/Cast"
+  input: "loss/dense_3_loss/num_elements/Cast"
   attr {
     key: "T"
     value {
@@ -4044,10 +4044,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Sum"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Sum"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/BroadcastGradientArgs"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/BroadcastGradientArgs"
   attr {
     key: "T"
     value {
@@ -4077,10 +4077,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Sum"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape"
   attr {
     key: "T"
     value {
@@ -4104,9 +4104,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Neg"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Neg"
   op: "Neg"
-  input: "loss/dense_loss/Sum_1"
+  input: "loss/dense_3_loss/Sum_1"
   attr {
     key: "T"
     value {
@@ -4124,10 +4124,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan_1"
   op: "DivNoNan"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Neg"
-  input: "loss/dense_loss/num_elements/Cast"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Neg"
+  input: "loss/dense_3_loss/num_elements/Cast"
   attr {
     key: "T"
     value {
@@ -4145,10 +4145,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan_2"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan_2"
   op: "DivNoNan"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan_1"
-  input: "loss/dense_loss/num_elements/Cast"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan_1"
+  input: "loss/dense_3_loss/num_elements/Cast"
   attr {
     key: "T"
     value {
@@ -4166,10 +4166,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/mul"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/mul"
   op: "Mul"
   input: "training/Adam/gradients/gradients/loss/mul_grad/Mul_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/div_no_nan_2"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/div_no_nan_2"
   attr {
     key: "T"
     value {
@@ -4187,10 +4187,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Sum_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Sum_1"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/BroadcastGradientArgs:1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/mul"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/BroadcastGradientArgs:1"
   attr {
     key: "T"
     value {
@@ -4220,10 +4220,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Reshape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Reshape_1"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Sum_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Sum_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -4247,7 +4247,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Reshape/shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Reshape/shape"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -4280,10 +4280,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/value_grad/Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Reshape/shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/value_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Reshape/shape"
   attr {
     key: "T"
     value {
@@ -4307,7 +4307,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Const"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Const"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -4340,10 +4340,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Tile"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Tile"
   op: "Tile"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Const"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Const"
   attr {
     key: "T"
     value {
@@ -4367,7 +4367,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Reshape/shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Reshape/shape"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -4403,10 +4403,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_1_grad/Tile"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Reshape/shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_1_grad/Tile"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Reshape/shape"
   attr {
     key: "T"
     value {
@@ -4433,9 +4433,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Shape"
   op: "Shape"
-  input: "loss/dense_loss/weighted_loss/Mul"
+  input: "loss/dense_3_loss/weighted_loss/Mul"
   attr {
     key: "T"
     value {
@@ -4462,10 +4462,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Tile"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Tile"
   op: "Tile"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Shape"
   attr {
     key: "T"
     value {
@@ -4492,9 +4492,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape"
   op: "Shape"
-  input: "loss/dense_loss/Mean"
+  input: "loss/dense_3_loss/Mean"
   attr {
     key: "T"
     value {
@@ -4521,9 +4521,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape_1"
   op: "Shape"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights"
   attr {
     key: "T"
     value {
@@ -4550,10 +4550,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/BroadcastGradientArgs"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/BroadcastGradientArgs"
   op: "BroadcastGradientArgs"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -4579,10 +4579,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Mul"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Mul"
   op: "Mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Tile"
-  input: "loss/dense_loss/weighted_loss/broadcast_weights"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Tile"
+  input: "loss/dense_3_loss/weighted_loss/broadcast_weights"
   attr {
     key: "T"
     value {
@@ -4603,10 +4603,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Sum"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Sum"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/BroadcastGradientArgs"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Mul"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/BroadcastGradientArgs"
   attr {
     key: "T"
     value {
@@ -4637,10 +4637,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Sum"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape"
   attr {
     key: "T"
     value {
@@ -4667,10 +4667,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Mul_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Mul_1"
   op: "Mul"
-  input: "loss/dense_loss/Mean"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Sum_grad/Tile"
+  input: "loss/dense_3_loss/Mean"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Sum_grad/Tile"
   attr {
     key: "T"
     value {
@@ -4691,10 +4691,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Sum_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Sum_1"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Mul_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/BroadcastGradientArgs:1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Mul_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/BroadcastGradientArgs:1"
   attr {
     key: "T"
     value {
@@ -4725,10 +4725,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Reshape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Reshape_1"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Sum_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Sum_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -4755,9 +4755,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
   op: "Shape"
-  input: "loss/dense_loss/SquaredDifference"
+  input: "loss/dense_3_loss/SquaredDifference"
   attr {
     key: "T"
     value {
@@ -4784,13 +4784,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Size"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Size"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4822,10 +4822,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/add"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/add"
   op: "AddV2"
-  input: "loss/dense_loss/Mean/reduction_indices"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Size"
+  input: "loss/dense_3_loss/Mean/reduction_indices"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Size"
   attr {
     key: "T"
     value {
@@ -4836,7 +4836,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4851,10 +4851,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/mod"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/mod"
   op: "FloorMod"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/add"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Size"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/add"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Size"
   attr {
     key: "T"
     value {
@@ -4865,7 +4865,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4880,13 +4880,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_1"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4921,13 +4921,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range/start"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range/start"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4959,13 +4959,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range/delta"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range/delta"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -4997,11 +4997,11 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range"
   op: "Range"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range/start"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Size"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range/delta"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range/start"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Size"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range/delta"
   attr {
     key: "Tidx"
     value {
@@ -5012,7 +5012,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5030,13 +5030,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Fill/value"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Fill/value"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5068,10 +5068,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Fill"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Fill"
   op: "Fill"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Fill/value"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Fill/value"
   attr {
     key: "T"
     value {
@@ -5082,7 +5082,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5103,12 +5103,12 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/DynamicStitch"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/DynamicStitch"
   op: "DynamicStitch"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/range"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/mod"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Fill"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/range"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/mod"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Fill"
   attr {
     key: "N"
     value {
@@ -5125,7 +5125,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5143,13 +5143,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum/y"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum/y"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5181,10 +5181,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum"
   op: "Maximum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/DynamicStitch"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum/y"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/DynamicStitch"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum/y"
   attr {
     key: "T"
     value {
@@ -5195,7 +5195,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5213,10 +5213,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/floordiv"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/floordiv"
   op: "FloorDiv"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum"
   attr {
     key: "T"
     value {
@@ -5227,7 +5227,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape"
+        s: "loc:@training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape"
       }
     }
   }
@@ -5245,10 +5245,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/weighted_loss/Mul_grad/Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/DynamicStitch"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/weighted_loss/Mul_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/DynamicStitch"
   attr {
     key: "T"
     value {
@@ -5278,10 +5278,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Tile"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Tile"
   op: "Tile"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/floordiv"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/floordiv"
   attr {
     key: "T"
     value {
@@ -5311,9 +5311,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_2"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_2"
   op: "Shape"
-  input: "loss/dense_loss/SquaredDifference"
+  input: "loss/dense_3_loss/SquaredDifference"
   attr {
     key: "T"
     value {
@@ -5340,9 +5340,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_3"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_3"
   op: "Shape"
-  input: "loss/dense_loss/Mean"
+  input: "loss/dense_3_loss/Mean"
   attr {
     key: "T"
     value {
@@ -5369,7 +5369,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Const"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Const"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -5405,10 +5405,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Prod"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Prod"
   op: "Prod"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_2"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Const"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_2"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Const"
   attr {
     key: "T"
     value {
@@ -5438,7 +5438,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Const_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Const_1"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -5474,10 +5474,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Prod_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Prod_1"
   op: "Prod"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Shape_3"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Const_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Shape_3"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Const_1"
   attr {
     key: "T"
     value {
@@ -5507,7 +5507,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum_1/y"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum_1/y"
   op: "Const"
   attr {
     key: "_output_shapes"
@@ -5537,10 +5537,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum_1"
   op: "Maximum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Prod_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum_1/y"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Prod_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum_1/y"
   attr {
     key: "T"
     value {
@@ -5558,10 +5558,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/floordiv_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/floordiv_1"
   op: "FloorDiv"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Prod"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Maximum_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Prod"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Maximum_1"
   attr {
     key: "T"
     value {
@@ -5579,9 +5579,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Cast"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Cast"
   op: "Cast"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/floordiv_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/floordiv_1"
   attr {
     key: "DstT"
     value {
@@ -5611,10 +5611,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/truediv"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/truediv"
   op: "RealDiv"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Tile"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/Cast"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Tile"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/Cast"
   attr {
     key: "T"
     value {
@@ -5638,9 +5638,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/scalar"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/scalar"
   op: "Const"
-  input: "^training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/truediv"
+  input: "^training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/truediv"
   attr {
     key: "_output_shapes"
     value {
@@ -5669,10 +5669,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Mul"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Mul"
   op: "Mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/scalar"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/truediv"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/scalar"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/truediv"
   attr {
     key: "T"
     value {
@@ -5696,11 +5696,11 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/sub"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/sub"
   op: "Sub"
-  input: "dense/BiasAdd"
+  input: "dense_3/BiasAdd"
   input: "IteratorGetNext:1"
-  input: "^training/Adam/gradients/gradients/loss/dense_loss/Mean_grad/truediv"
+  input: "^training/Adam/gradients/gradients/loss/dense_3_loss/Mean_grad/truediv"
   attr {
     key: "T"
     value {
@@ -5724,10 +5724,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/mul_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/mul_1"
   op: "Mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Mul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/sub"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Mul"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/sub"
   attr {
     key: "T"
     value {
@@ -5751,9 +5751,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape"
   op: "Shape"
-  input: "dense/BiasAdd"
+  input: "dense_3/BiasAdd"
   attr {
     key: "T"
     value {
@@ -5780,7 +5780,7 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape_1"
   op: "Shape"
   input: "IteratorGetNext:1"
   attr {
@@ -5809,10 +5809,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/BroadcastGradientArgs"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/BroadcastGradientArgs"
   op: "BroadcastGradientArgs"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -5838,10 +5838,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Sum"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Sum"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/mul_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/BroadcastGradientArgs"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/mul_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/BroadcastGradientArgs"
   attr {
     key: "T"
     value {
@@ -5872,10 +5872,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Sum"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape"
   attr {
     key: "T"
     value {
@@ -5905,10 +5905,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Sum_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Sum_1"
   op: "Sum"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/mul_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/BroadcastGradientArgs:1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/mul_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/BroadcastGradientArgs:1"
   attr {
     key: "T"
     value {
@@ -5939,10 +5939,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape_1"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape_1"
   op: "Reshape"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Sum_1"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Shape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Sum_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Shape_1"
   attr {
     key: "T"
     value {
@@ -5969,9 +5969,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Neg"
+  name: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Neg"
   op: "Neg"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape_1"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape_1"
   attr {
     key: "T"
     value {
@@ -5992,9 +5992,9 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/dense/BiasAdd_grad/BiasAddGrad"
+  name: "training/Adam/gradients/gradients/dense_3/BiasAdd_grad/BiasAddGrad"
   op: "BiasAddGrad"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape"
   attr {
     key: "T"
     value {
@@ -6021,10 +6021,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/dense/MatMul_grad/MatMul"
+  name: "training/Adam/gradients/gradients/dense_3/MatMul_grad/MatMul"
   op: "MatMul"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape"
-  input: "dense/MatMul/ReadVariableOp"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape"
+  input: "dense_3/MatMul/ReadVariableOp"
   attr {
     key: "T"
     value {
@@ -6060,10 +6060,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/gradients/gradients/dense/MatMul_grad/MatMul_1"
+  name: "training/Adam/gradients/gradients/dense_3/MatMul_grad/MatMul_1"
   op: "MatMul"
   input: "IteratorGetNext"
-  input: "training/Adam/gradients/gradients/loss/dense_loss/SquaredDifference_grad/Reshape"
+  input: "training/Adam/gradients/gradients/loss/dense_3_loss/SquaredDifference_grad/Reshape"
   attr {
     key: "T"
     value {
@@ -6619,13 +6619,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/m/Initializer/zeros"
+  name: "training/Adam/dense_3/kernel/m/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -6669,13 +6669,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/m"
+  name: "training/Adam/dense_3/kernel/m"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -6716,19 +6716,19 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "training/Adam/dense/kernel/m"
+      s: "training/Adam/dense_3/kernel/m"
     }
   }
 }
 node {
-  name: "training/Adam/dense/kernel/m/IsInitialized/VarIsInitializedOp"
+  name: "training/Adam/dense_3/kernel/m/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/m"
+  input: "training/Adam/dense_3/kernel/m"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -6743,10 +6743,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/m/Assign"
+  name: "training/Adam/dense_3/kernel/m/Assign"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/kernel/m"
-  input: "training/Adam/dense/kernel/m/Initializer/zeros"
+  input: "training/Adam/dense_3/kernel/m"
+  input: "training/Adam/dense_3/kernel/m/Initializer/zeros"
   attr {
     key: "dtype"
     value {
@@ -6755,14 +6755,14 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/m/Read/ReadVariableOp"
+  name: "training/Adam/dense_3/kernel/m/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "training/Adam/dense/kernel/m"
+  input: "training/Adam/dense_3/kernel/m"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -6789,13 +6789,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/m/Initializer/zeros"
+  name: "training/Adam/dense_3/bias/m/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -6833,13 +6833,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/m"
+  name: "training/Adam/dense_3/bias/m"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -6877,19 +6877,19 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "training/Adam/dense/bias/m"
+      s: "training/Adam/dense_3/bias/m"
     }
   }
 }
 node {
-  name: "training/Adam/dense/bias/m/IsInitialized/VarIsInitializedOp"
+  name: "training/Adam/dense_3/bias/m/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/m"
+  input: "training/Adam/dense_3/bias/m"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -6904,10 +6904,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/m/Assign"
+  name: "training/Adam/dense_3/bias/m/Assign"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/bias/m"
-  input: "training/Adam/dense/bias/m/Initializer/zeros"
+  input: "training/Adam/dense_3/bias/m"
+  input: "training/Adam/dense_3/bias/m/Initializer/zeros"
   attr {
     key: "dtype"
     value {
@@ -6916,14 +6916,14 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/m/Read/ReadVariableOp"
+  name: "training/Adam/dense_3/bias/m/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "training/Adam/dense/bias/m"
+  input: "training/Adam/dense_3/bias/m"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -6947,13 +6947,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/v/Initializer/zeros"
+  name: "training/Adam/dense_3/kernel/v/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -6997,13 +6997,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/v"
+  name: "training/Adam/dense_3/kernel/v"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -7044,19 +7044,19 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "training/Adam/dense/kernel/v"
+      s: "training/Adam/dense_3/kernel/v"
     }
   }
 }
 node {
-  name: "training/Adam/dense/kernel/v/IsInitialized/VarIsInitializedOp"
+  name: "training/Adam/dense_3/kernel/v/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/v"
+  input: "training/Adam/dense_3/kernel/v"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -7071,10 +7071,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/v/Assign"
+  name: "training/Adam/dense_3/kernel/v/Assign"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/kernel/v"
-  input: "training/Adam/dense/kernel/v/Initializer/zeros"
+  input: "training/Adam/dense_3/kernel/v"
+  input: "training/Adam/dense_3/kernel/v/Initializer/zeros"
   attr {
     key: "dtype"
     value {
@@ -7083,14 +7083,14 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/kernel/v/Read/ReadVariableOp"
+  name: "training/Adam/dense_3/kernel/v/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "training/Adam/dense/kernel/v"
+  input: "training/Adam/dense_3/kernel/v"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -7117,13 +7117,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/v/Initializer/zeros"
+  name: "training/Adam/dense_3/bias/v/Initializer/zeros"
   op: "Const"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -7161,13 +7161,13 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/v"
+  name: "training/Adam/dense_3/bias/v"
   op: "VarHandleOp"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -7205,19 +7205,19 @@ node {
   attr {
     key: "shared_name"
     value {
-      s: "training/Adam/dense/bias/v"
+      s: "training/Adam/dense_3/bias/v"
     }
   }
 }
 node {
-  name: "training/Adam/dense/bias/v/IsInitialized/VarIsInitializedOp"
+  name: "training/Adam/dense_3/bias/v/IsInitialized/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/v"
+  input: "training/Adam/dense_3/bias/v"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -7232,10 +7232,10 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/v/Assign"
+  name: "training/Adam/dense_3/bias/v/Assign"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/bias/v"
-  input: "training/Adam/dense/bias/v/Initializer/zeros"
+  input: "training/Adam/dense_3/bias/v"
+  input: "training/Adam/dense_3/bias/v/Initializer/zeros"
   attr {
     key: "dtype"
     value {
@@ -7244,14 +7244,14 @@ node {
   }
 }
 node {
-  name: "training/Adam/dense/bias/v/Read/ReadVariableOp"
+  name: "training/Adam/dense_3/bias/v/Read/ReadVariableOp"
   op: "ReadVariableOp"
-  input: "training/Adam/dense/bias/v"
+  input: "training/Adam/dense_3/bias/v"
   attr {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -7816,18 +7816,18 @@ node {
   }
 }
 node {
-  name: "training/Adam/Adam/update_dense/kernel/ResourceApplyAdam"
+  name: "training/Adam/Adam/update_dense_3/kernel/ResourceApplyAdam"
   op: "ResourceApplyAdam"
-  input: "dense/kernel"
-  input: "training/Adam/dense/kernel/m"
-  input: "training/Adam/dense/kernel/v"
+  input: "dense_3/kernel"
+  input: "training/Adam/dense_3/kernel/m"
+  input: "training/Adam/dense_3/kernel/v"
   input: "training/Adam/Pow"
   input: "training/Adam/Pow_1"
   input: "training/Adam/Identity"
   input: "training/Adam/Identity_1"
   input: "training/Adam/Identity_2"
   input: "training/Adam/Const"
-  input: "training/Adam/gradients/gradients/dense/MatMul_grad/MatMul_1"
+  input: "training/Adam/gradients/gradients/dense_3/MatMul_grad/MatMul_1"
   attr {
     key: "T"
     value {
@@ -7838,7 +7838,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/kernel"
+        s: "loc:@dense_3/kernel"
       }
     }
   }
@@ -7856,18 +7856,18 @@ node {
   }
 }
 node {
-  name: "training/Adam/Adam/update_dense/bias/ResourceApplyAdam"
+  name: "training/Adam/Adam/update_dense_3/bias/ResourceApplyAdam"
   op: "ResourceApplyAdam"
-  input: "dense/bias"
-  input: "training/Adam/dense/bias/m"
-  input: "training/Adam/dense/bias/v"
+  input: "dense_3/bias"
+  input: "training/Adam/dense_3/bias/m"
+  input: "training/Adam/dense_3/bias/v"
   input: "training/Adam/Pow"
   input: "training/Adam/Pow_1"
   input: "training/Adam/Identity"
   input: "training/Adam/Identity_1"
   input: "training/Adam/Identity_2"
   input: "training/Adam/Const"
-  input: "training/Adam/gradients/gradients/dense/BiasAdd_grad/BiasAddGrad"
+  input: "training/Adam/gradients/gradients/dense_3/BiasAdd_grad/BiasAddGrad"
   attr {
     key: "T"
     value {
@@ -7878,7 +7878,7 @@ node {
     key: "_class"
     value {
       list {
-        s: "loc:@dense/bias"
+        s: "loc:@dense_3/bias"
       }
     }
   }
@@ -7898,8 +7898,8 @@ node {
 node {
   name: "training/Adam/Adam/AssignAdd/value"
   op: "Const"
-  input: "^training/Adam/Adam/update_dense/bias/ResourceApplyAdam"
-  input: "^training/Adam/Adam/update_dense/kernel/ResourceApplyAdam"
+  input: "^training/Adam/Adam/update_dense_3/bias/ResourceApplyAdam"
+  input: "^training/Adam/Adam/update_dense_3/kernel/ResourceApplyAdam"
   attr {
     key: "_output_shapes"
     value {
@@ -8193,7 +8193,7 @@ node {
             size: 1
           }
         }
-        string_val: "dense/bias"
+        string_val: "dense_3/bias"
       }
     }
   }
@@ -8287,7 +8287,7 @@ node {
 node {
   name: "AssignVariableOp"
   op: "AssignVariableOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   input: "Identity_2"
   attr {
     key: "dtype"
@@ -8359,7 +8359,7 @@ node {
             size: 1
           }
         }
-        string_val: "dense/kernel"
+        string_val: "dense_3/kernel"
       }
     }
   }
@@ -8456,7 +8456,7 @@ node {
 node {
   name: "AssignVariableOp_1"
   op: "AssignVariableOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   input: "Identity_3"
   attr {
     key: "dtype"
@@ -8525,10 +8525,10 @@ node {
   input: "^training/Adam/beta_1/Assign"
   input: "^training/Adam/beta_2/Assign"
   input: "^training/Adam/decay/Assign"
-  input: "^training/Adam/dense/bias/m/Assign"
-  input: "^training/Adam/dense/bias/v/Assign"
-  input: "^training/Adam/dense/kernel/m/Assign"
-  input: "^training/Adam/dense/kernel/v/Assign"
+  input: "^training/Adam/dense_3/bias/m/Assign"
+  input: "^training/Adam/dense_3/bias/v/Assign"
+  input: "^training/Adam/dense_3/kernel/m/Assign"
+  input: "^training/Adam/dense_3/kernel/v/Assign"
   input: "^training/Adam/learning_rate/Assign"
 }
 node {
@@ -8572,7 +8572,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   attr {
     key: "_output_shapes"
     value {
@@ -8586,7 +8586,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_1"
   op: "VarIsInitializedOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   attr {
     key: "_output_shapes"
     value {
@@ -8656,7 +8656,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_6"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/m"
+  input: "training/Adam/dense_3/kernel/m"
   attr {
     key: "_output_shapes"
     value {
@@ -8670,7 +8670,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_7"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/m"
+  input: "training/Adam/dense_3/bias/m"
   attr {
     key: "_output_shapes"
     value {
@@ -8684,7 +8684,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_8"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/v"
+  input: "training/Adam/dense_3/kernel/v"
   attr {
     key: "_output_shapes"
     value {
@@ -8698,7 +8698,7 @@ node {
 node {
   name: "report_uninitialized_variables/VarIsInitializedOp_9"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/v"
+  input: "training/Adam/dense_3/bias/v"
   attr {
     key: "_output_shapes"
     value {
@@ -8836,16 +8836,16 @@ node {
           }
         }
         string_val: "global_step"
-        string_val: "dense/kernel"
-        string_val: "dense/bias"
+        string_val: "dense_3/kernel"
+        string_val: "dense_3/bias"
         string_val: "training/Adam/beta_1"
         string_val: "training/Adam/beta_2"
         string_val: "training/Adam/decay"
         string_val: "training/Adam/learning_rate"
-        string_val: "training/Adam/dense/kernel/m"
-        string_val: "training/Adam/dense/bias/m"
-        string_val: "training/Adam/dense/kernel/v"
-        string_val: "training/Adam/dense/bias/v"
+        string_val: "training/Adam/dense_3/kernel/m"
+        string_val: "training/Adam/dense_3/bias/m"
+        string_val: "training/Adam/dense_3/kernel/v"
+        string_val: "training/Adam/dense_3/bias/v"
         string_val: "total"
         string_val: "count_1"
       }
@@ -10025,7 +10025,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp"
   op: "VarIsInitializedOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   attr {
     key: "_output_shapes"
     value {
@@ -10039,7 +10039,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_1"
   op: "VarIsInitializedOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   attr {
     key: "_output_shapes"
     value {
@@ -10109,7 +10109,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_6"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/m"
+  input: "training/Adam/dense_3/kernel/m"
   attr {
     key: "_output_shapes"
     value {
@@ -10123,7 +10123,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_7"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/m"
+  input: "training/Adam/dense_3/bias/m"
   attr {
     key: "_output_shapes"
     value {
@@ -10137,7 +10137,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_8"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/kernel/v"
+  input: "training/Adam/dense_3/kernel/v"
   attr {
     key: "_output_shapes"
     value {
@@ -10151,7 +10151,7 @@ node {
 node {
   name: "report_uninitialized_variables_1/VarIsInitializedOp_9"
   op: "VarIsInitializedOp"
-  input: "training/Adam/dense/bias/v"
+  input: "training/Adam/dense_3/bias/v"
   attr {
     key: "_output_shapes"
     value {
@@ -10259,16 +10259,16 @@ node {
           }
         }
         string_val: "global_step"
-        string_val: "dense/kernel"
-        string_val: "dense/bias"
+        string_val: "dense_3/kernel"
+        string_val: "dense_3/bias"
         string_val: "training/Adam/beta_1"
         string_val: "training/Adam/beta_2"
         string_val: "training/Adam/decay"
         string_val: "training/Adam/learning_rate"
-        string_val: "training/Adam/dense/kernel/m"
-        string_val: "training/Adam/dense/bias/m"
-        string_val: "training/Adam/dense/kernel/v"
-        string_val: "training/Adam/dense/bias/v"
+        string_val: "training/Adam/dense_3/kernel/m"
+        string_val: "training/Adam/dense_3/bias/m"
+        string_val: "training/Adam/dense_3/kernel/v"
+        string_val: "training/Adam/dense_3/bias/v"
       }
     }
   }
@@ -11565,7 +11565,7 @@ node {
         dtype: DT_STRING
         tensor_shape {
         }
-        string_val: "_temp_1aacf7901872465dbf512c5f3ad22273/part"
+        string_val: "_temp_0b16bf3a07174dbb83ceb47bac697d58/part"
       }
     }
   }
@@ -11707,16 +11707,16 @@ node {
             size: 11
           }
         }
-        string_val: "dense/bias"
-        string_val: "dense/kernel"
+        string_val: "dense_3/bias"
+        string_val: "dense_3/kernel"
         string_val: "global_step"
         string_val: "training/Adam/beta_1"
         string_val: "training/Adam/beta_2"
         string_val: "training/Adam/decay"
-        string_val: "training/Adam/dense/bias/m"
-        string_val: "training/Adam/dense/bias/v"
-        string_val: "training/Adam/dense/kernel/m"
-        string_val: "training/Adam/dense/kernel/v"
+        string_val: "training/Adam/dense_3/bias/m"
+        string_val: "training/Adam/dense_3/bias/v"
+        string_val: "training/Adam/dense_3/kernel/m"
+        string_val: "training/Adam/dense_3/kernel/v"
         string_val: "training/Adam/learning_rate"
       }
     }
@@ -11775,16 +11775,16 @@ node {
   input: "save/ShardedFilename"
   input: "save/SaveV2/tensor_names"
   input: "save/SaveV2/shape_and_slices"
-  input: "dense/bias/Read/ReadVariableOp"
-  input: "dense/kernel/Read/ReadVariableOp"
+  input: "dense_3/bias/Read/ReadVariableOp"
+  input: "dense_3/kernel/Read/ReadVariableOp"
   input: "global_step"
   input: "training/Adam/beta_1/Read/ReadVariableOp"
   input: "training/Adam/beta_2/Read/ReadVariableOp"
   input: "training/Adam/decay/Read/ReadVariableOp"
-  input: "training/Adam/dense/bias/m/Read/ReadVariableOp"
-  input: "training/Adam/dense/bias/v/Read/ReadVariableOp"
-  input: "training/Adam/dense/kernel/m/Read/ReadVariableOp"
-  input: "training/Adam/dense/kernel/v/Read/ReadVariableOp"
+  input: "training/Adam/dense_3/bias/m/Read/ReadVariableOp"
+  input: "training/Adam/dense_3/bias/v/Read/ReadVariableOp"
+  input: "training/Adam/dense_3/kernel/m/Read/ReadVariableOp"
+  input: "training/Adam/dense_3/kernel/v/Read/ReadVariableOp"
   input: "training/Adam/learning_rate/Read/ReadVariableOp"
   device: "/device:CPU:0"
   attr {
@@ -11941,16 +11941,16 @@ node {
             size: 11
           }
         }
-        string_val: "dense/bias"
-        string_val: "dense/kernel"
+        string_val: "dense_3/bias"
+        string_val: "dense_3/kernel"
         string_val: "global_step"
         string_val: "training/Adam/beta_1"
         string_val: "training/Adam/beta_2"
         string_val: "training/Adam/decay"
-        string_val: "training/Adam/dense/bias/m"
-        string_val: "training/Adam/dense/bias/v"
-        string_val: "training/Adam/dense/kernel/m"
-        string_val: "training/Adam/dense/kernel/v"
+        string_val: "training/Adam/dense_3/bias/m"
+        string_val: "training/Adam/dense_3/bias/v"
+        string_val: "training/Adam/dense_3/kernel/m"
+        string_val: "training/Adam/dense_3/kernel/v"
         string_val: "training/Adam/learning_rate"
       }
     }
@@ -12093,7 +12093,7 @@ node {
 node {
   name: "save/AssignVariableOp"
   op: "AssignVariableOp"
-  input: "dense/bias"
+  input: "dense_3/bias"
   input: "save/Identity_1"
   attr {
     key: "dtype"
@@ -12126,7 +12126,7 @@ node {
 node {
   name: "save/AssignVariableOp_1"
   op: "AssignVariableOp"
-  input: "dense/kernel"
+  input: "dense_3/kernel"
   input: "save/Identity_2"
   attr {
     key: "dtype"
@@ -12299,7 +12299,7 @@ node {
 node {
   name: "save/AssignVariableOp_5"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/bias/m"
+  input: "training/Adam/dense_3/bias/m"
   input: "save/Identity_6"
   attr {
     key: "dtype"
@@ -12332,7 +12332,7 @@ node {
 node {
   name: "save/AssignVariableOp_6"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/bias/v"
+  input: "training/Adam/dense_3/bias/v"
   input: "save/Identity_7"
   attr {
     key: "dtype"
@@ -12365,7 +12365,7 @@ node {
 node {
   name: "save/AssignVariableOp_7"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/kernel/m"
+  input: "training/Adam/dense_3/kernel/m"
   input: "save/Identity_8"
   attr {
     key: "dtype"
@@ -12398,7 +12398,7 @@ node {
 node {
   name: "save/AssignVariableOp_8"
   op: "AssignVariableOp"
-  input: "training/Adam/dense/kernel/v"
+  input: "training/Adam/dense_3/kernel/v"
   input: "save/Identity_9"
   attr {
     key: "dtype"
@@ -12463,7 +12463,146 @@ node {
 library {
   function {
     signature {
-      name: "__inference_Dataset_map_decode_csv_477"
+      name: "__inference_Dataset_flat_map_read_one_file_556"
+      input_arg {
+        name: "args_0"
+        type: DT_STRING
+      }
+      output_arg {
+        name: "identity"
+        type: DT_VARIANT
+      }
+      is_stateful: true
+      control_output: "TextLineDataset"
+    }
+    node_def {
+      name: "compression_type"
+      op: "Const"
+      attr {
+        key: "_output_shapes"
+        value {
+          list {
+            shape {
+            }
+          }
+        }
+      }
+      attr {
+        key: "dtype"
+        value {
+          type: DT_STRING
+        }
+      }
+      attr {
+        key: "value"
+        value {
+          tensor {
+            dtype: DT_STRING
+            tensor_shape {
+            }
+            string_val: ""
+          }
+        }
+      }
+    }
+    node_def {
+      name: "buffer_size"
+      op: "Const"
+      attr {
+        key: "_output_shapes"
+        value {
+          list {
+            shape {
+            }
+          }
+        }
+      }
+      attr {
+        key: "dtype"
+        value {
+          type: DT_INT64
+        }
+      }
+      attr {
+        key: "value"
+        value {
+          tensor {
+            dtype: DT_INT64
+            tensor_shape {
+            }
+            int64_val: 262144
+          }
+        }
+      }
+    }
+    node_def {
+      name: "TextLineDataset"
+      op: "TextLineDataset"
+      input: "args_0"
+      input: "compression_type:output:0"
+      input: "buffer_size:output:0"
+      attr {
+        key: "_output_shapes"
+        value {
+          list {
+            shape {
+            }
+          }
+        }
+      }
+    }
+    node_def {
+      name: "Identity"
+      op: "Identity"
+      input: "TextLineDataset:handle:0"
+      input: "^TextLineDataset"
+      attr {
+        key: "T"
+        value {
+          type: DT_VARIANT
+        }
+      }
+      attr {
+        key: "_output_shapes"
+        value {
+          list {
+            shape {
+            }
+          }
+        }
+      }
+    }
+    ret {
+      key: "identity"
+      value: "Identity:output:0"
+    }
+    attr {
+      key: "_input_shapes"
+      value {
+        list {
+          shape {
+          }
+        }
+      }
+    }
+    control_ret {
+      key: "TextLineDataset"
+      value: "TextLineDataset"
+    }
+    arg_attr {
+      value {
+        attr {
+          key: "_user_specified_name"
+          value {
+            s: "args_0"
+          }
+        }
+      }
+    }
+  }
+  function {
+    signature {
+      name: "__inference_Dataset_map_decode_csv_666"
       input_arg {
         name: "args_0"
         type: DT_STRING
@@ -14677,213 +14816,7 @@ library {
   }
   function {
     signature {
-      name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_370"
-      input_arg {
-        name: "args_0"
-        type: DT_STRING
-      }
-      output_arg {
-        name: "identity"
-        type: DT_VARIANT
-      }
-      is_stateful: true
-      control_output: "TensorSliceDataset"
-    }
-    node_def {
-      name: "flat_filenames/shape"
-      op: "Const"
-      attr {
-        key: "_output_shapes"
-        value {
-          list {
-            shape {
-              dim {
-                size: 1
-              }
-            }
-          }
-        }
-      }
-      attr {
-        key: "dtype"
-        value {
-          type: DT_INT32
-        }
-      }
-      attr {
-        key: "value"
-        value {
-          tensor {
-            dtype: DT_INT32
-            tensor_shape {
-              dim {
-                size: 1
-              }
-            }
-            int_val: -1
-          }
-        }
-      }
-    }
-    node_def {
-      name: "flat_filenames"
-      op: "Reshape"
-      input: "args_0"
-      input: "flat_filenames/shape:output:0"
-      attr {
-        key: "T"
-        value {
-          type: DT_STRING
-        }
-      }
-      attr {
-        key: "Tshape"
-        value {
-          type: DT_INT32
-        }
-      }
-      attr {
-        key: "_output_shapes"
-        value {
-          list {
-            shape {
-              dim {
-                size: 1
-              }
-            }
-          }
-        }
-      }
-    }
-    node_def {
-      name: "TensorSliceDataset"
-      op: "TensorSliceDataset"
-      input: "flat_filenames:output:0"
-      attr {
-        key: "Toutput_types"
-        value {
-          list {
-            type: DT_STRING
-          }
-        }
-      }
-      attr {
-        key: "_output_shapes"
-        value {
-          list {
-            shape {
-            }
-          }
-        }
-      }
-      attr {
-        key: "output_shapes"
-        value {
-          list {
-            shape {
-            }
-          }
-        }
-      }
-    }
-    node_def {
-      name: "FlatMapDataset"
-      op: "FlatMapDataset"
-      input: "TensorSliceDataset:handle:0"
-      attr {
-        key: "Targuments"
-        value {
-          list {
-          }
-        }
-      }
-      attr {
-        key: "_output_shapes"
-        value {
-          list {
-            shape {
-            }
-          }
-        }
-      }
-      attr {
-        key: "f"
-        value {
-          func {
-            name: "__inference_Dataset_flat_map_read_one_file_367"
-          }
-        }
-      }
-      attr {
-        key: "output_shapes"
-        value {
-          list {
-            shape {
-            }
-          }
-        }
-      }
-      attr {
-        key: "output_types"
-        value {
-          list {
-            type: DT_STRING
-          }
-        }
-      }
-    }
-    node_def {
-      name: "Identity"
-      op: "Identity"
-      input: "FlatMapDataset:handle:0"
-      input: "^TensorSliceDataset"
-      attr {
-        key: "T"
-        value {
-          type: DT_VARIANT
-        }
-      }
-      attr {
-        key: "_output_shapes"
-        value {
-          list {
-            shape {
-            }
-          }
-        }
-      }
-    }
-    ret {
-      key: "identity"
-      value: "Identity:output:0"
-    }
-    attr {
-      key: "_input_shapes"
-      value {
-        list {
-          shape {
-          }
-        }
-      }
-    }
-    control_ret {
-      key: "TensorSliceDataset"
-      value: "TensorSliceDataset"
-    }
-    arg_attr {
-      value {
-        attr {
-          key: "_user_specified_name"
-          value {
-            s: "args_0"
-          }
-        }
-      }
-    }
-  }
-  function {
-    signature {
-      name: "_make_dataset_uGaJWhrAAKc"
+      name: "_make_dataset_Aysja19ta44"
       output_arg {
         name: "modeldataset"
         type: DT_VARIANT
@@ -15292,7 +15225,7 @@ library {
         key: "f"
         value {
           func {
-            name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_370"
+            name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_559"
           }
         }
       }
@@ -15330,7 +15263,7 @@ library {
         key: "f"
         value {
           func {
-            name: "__inference_Dataset_map_decode_csv_477"
+            name: "__inference_Dataset_map_decode_csv_666"
           }
         }
       }
@@ -15717,7 +15650,7 @@ library {
   }
   function {
     signature {
-      name: "__inference_Dataset_flat_map_read_one_file_367"
+      name: "__inference_Dataset_flat_map_<class \'abc.ABCMeta\'>_559"
       input_arg {
         name: "args_0"
         type: DT_STRING
@@ -15727,41 +15660,86 @@ library {
         type: DT_VARIANT
       }
       is_stateful: true
-      control_output: "TextLineDataset"
+      control_output: "TensorSliceDataset"
     }
     node_def {
-      name: "compression_type"
+      name: "flat_filenames/shape"
       op: "Const"
       attr {
         key: "_output_shapes"
         value {
           list {
             shape {
+              dim {
+                size: 1
+              }
             }
           }
         }
       }
       attr {
         key: "dtype"
+        value {
+          type: DT_INT32
+        }
+      }
+      attr {
+        key: "value"
+        value {
+          tensor {
+            dtype: DT_INT32
+            tensor_shape {
+              dim {
+                size: 1
+              }
+            }
+            int_val: -1
+          }
+        }
+      }
+    }
+    node_def {
+      name: "flat_filenames"
+      op: "Reshape"
+      input: "args_0"
+      input: "flat_filenames/shape:output:0"
+      attr {
+        key: "T"
         value {
           type: DT_STRING
         }
       }
       attr {
-        key: "value"
+        key: "Tshape"
         value {
-          tensor {
-            dtype: DT_STRING
-            tensor_shape {
+          type: DT_INT32
+        }
+      }
+      attr {
+        key: "_output_shapes"
+        value {
+          list {
+            shape {
+              dim {
+                size: 1
+              }
             }
-            string_val: ""
           }
         }
       }
     }
     node_def {
-      name: "buffer_size"
-      op: "Const"
+      name: "TensorSliceDataset"
+      op: "TensorSliceDataset"
+      input: "flat_filenames:output:0"
+      attr {
+        key: "Toutput_types"
+        value {
+          list {
+            type: DT_STRING
+          }
+        }
+      }
       attr {
         key: "_output_shapes"
         value {
@@ -15772,35 +15750,57 @@ library {
         }
       }
       attr {
-        key: "dtype"
+        key: "output_shapes"
         value {
-          type: DT_INT64
-        }
-      }
-      attr {
-        key: "value"
-        value {
-          tensor {
-            dtype: DT_INT64
-            tensor_shape {
+          list {
+            shape {
             }
-            int64_val: 262144
           }
         }
       }
     }
     node_def {
-      name: "TextLineDataset"
-      op: "TextLineDataset"
-      input: "args_0"
-      input: "compression_type:output:0"
-      input: "buffer_size:output:0"
+      name: "FlatMapDataset"
+      op: "FlatMapDataset"
+      input: "TensorSliceDataset:handle:0"
+      attr {
+        key: "Targuments"
+        value {
+          list {
+          }
+        }
+      }
       attr {
         key: "_output_shapes"
         value {
           list {
             shape {
             }
+          }
+        }
+      }
+      attr {
+        key: "f"
+        value {
+          func {
+            name: "__inference_Dataset_flat_map_read_one_file_556"
+          }
+        }
+      }
+      attr {
+        key: "output_shapes"
+        value {
+          list {
+            shape {
+            }
+          }
+        }
+      }
+      attr {
+        key: "output_types"
+        value {
+          list {
+            type: DT_STRING
           }
         }
       }
@@ -15808,8 +15808,8 @@ library {
     node_def {
       name: "Identity"
       op: "Identity"
-      input: "TextLineDataset:handle:0"
-      input: "^TextLineDataset"
+      input: "FlatMapDataset:handle:0"
+      input: "^TensorSliceDataset"
       attr {
         key: "T"
         value {
@@ -15840,8 +15840,8 @@ library {
       }
     }
     control_ret {
-      key: "TextLineDataset"
-      value: "TextLineDataset"
+      key: "TensorSliceDataset"
+      value: "TensorSliceDataset"
     }
     arg_attr {
       value {
