@@ -1,0 +1,16 @@
+trainingInput:
+    scaleTier: PREMIUM_1
+    hyperparameters:
+        hyperparameterMetricTag: RMSE
+        goal: MINIMIZE
+        maxTrials: 4
+        maxParallelTrials: 2
+        enableTrialEarlyStopping: True
+        params:
+        - parameterName: nnsize
+          type: CATEGORICAL
+          categoricalValues:
+          - 30,10
+          - 100,10
+          - 30,100
+          - 30,10,30        
